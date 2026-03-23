@@ -44,7 +44,7 @@ export default function Navbar() {
         {/* --- BRANDING (Text Only Now) --- */}
         <div className="flex items-center pl-2">
           <div className="text-white font-bold tracking-tighter text-xl">
-            CB <span className="text-orange-400">🐝</span>
+            CB <span className="text-orange-400">🐝.....</span>
           </div>
         </div>
 
