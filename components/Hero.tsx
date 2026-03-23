@@ -30,12 +30,12 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* --- THE INTRO TEXT (Updated from Resume) --- */}
+      {/* --- THE INTRO TEXT --- */}
       <div className="mt-8 text-lg text-gray-400 max-w-2xl leading-relaxed">
         <p>
-          Third-year student specializing in <span className="text-white font-semibold">Node.js, AI Integration, and Docker</span>[cite: 8]. 
-          Proven experience in <span className="text-orange-500 font-bold">RSU Hackathons</span>  and 
-          developing intelligent systems like <span className="text-white font-semibold">Trash-Sort-AI</span> using YOLOv11[cite: 42, 43].
+          Third-year student specializing in <span className="text-white font-semibold">Node.js, AI Integration, and Docker</span>. 
+          Proven experience in <span className="text-orange-500 font-bold">RSU Hackathons</span> and 
+          developing intelligent systems like <span className="text-white font-semibold">Trash-Sort-AI</span> (YOLOv11).
         </p>
       </div>
 
