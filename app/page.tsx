@@ -68,7 +68,7 @@ export default function Home() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6">
-          {projects.map((p, i) => (
+          {(projects ?? []).map((p, i) => (
             <ProjectCard key={i} project={p} />
           ))}
         </div>
