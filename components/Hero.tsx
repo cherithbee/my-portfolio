@@ -48,12 +48,14 @@ export default function Hero() {
         >
           Download Resume
         </a>
-        <a 
-          href="https://github.com/cherithbee" 
-          className="bg-white/5 border border-white/10 text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
-        >
-          View GitHub
-        </a>
+      <a 
+        href="https://github.com/cherithbee" // Updated to your actual link
+        target="_blank" // This opens it in a new tab so they don't leave your portfolio
+        rel="noopener noreferrer" // Security best practice
+        className="bg-white/5 border border-white/10 text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
+      >
+        View GitHub
+      </a>
       </div>
     </section>
   );
