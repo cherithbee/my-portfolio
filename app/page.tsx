@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* 2. About Section */}
+{/* 2. About Section Update */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-24 border-t border-white/5 scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-white italic">About Me</h2>
@@ -22,19 +22,15 @@ export default function Home() {
         </div>
         <div className="text-gray-400 text-lg max-w-3xl leading-relaxed">
           <p>
-            I am a passionate <span className="text-white">Information Technology student at Rangsit University</span> 
-            with a focus on building intelligent, scalable applications. My expertise spans across 
-            <span className="text-orange-500"> Full-stack Development (Next.js, Node.js)</span> and 
-            <span className="text-orange-500"> AI Integration (YOLOv11, Computer Vision)</span>.
-          </p>
-          <p className="mt-4">
-            Currently based in Pathum Thani, I am dedicated to bridging the gap between complex data 
-            analytics and user-friendly web interfaces.
+            I am a third-year <span className="text-white">ICT student at Rangsit University</span> [cite: 8, 11] 
+            specializing in <span className="text-orange-500">Node.js, AI integration, and Docker</span>[cite: 8]. 
+            With a current <span className="text-white">GPA of 3.72</span>, I am seeking a technical 
+            internship for August 2026 to contribute to scalable backend systems[cite: 2, 9].
           </p>
         </div>
       </section>
 
-      {/* 3. Experience Section */}
+      {/* 3. Experience Section Update */}
       <section id="experience" className="max-w-6xl mx-auto px-6 py-24 border-t border-white/5 bg-white/[0.02] scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-white italic">Experience</h2>
@@ -42,23 +38,23 @@ export default function Home() {
         </div>
         
         <div className="space-y-12">
-          {/* Professional Role 1 */}
-          <div className="border-l-2 border-orange-500 pl-6 group transition-all">
-            <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">Student Teacher Trainee</h3>
-            <p className="text-orange-500/80 text-sm font-medium uppercase tracking-wider">Mawlamyine Education Degree College</p>
+          {/* Volunteer English Teacher */}
+          <div className="border-l-2 border-orange-500 pl-6 group">
+            <h3 className="text-xl font-bold text-white">Volunteer English Teacher</h3>
+            <p className="text-orange-500/80 text-sm font-medium uppercase tracking-wider">Rāmaññarațtha Buddhist University | 2022-2023</p> [cite: 54, 55]
             <p className="text-gray-400 mt-2 max-w-2xl">
-              Developed leadership and communication skills while managing educational environments 
-              and coordinating with diverse teams.
+              Designed English curriculum for children aged 10-15[cite: 56]. Simplified complex topics for 
+              diverse learners, a skill I now apply to technical documentation[cite: 57].
             </p>
           </div>
 
-          {/* Professional Role 2 */}
-          <div className="border-l-2 border-white/10 pl-6 group transition-all hover:border-orange-500/50">
-            <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">Volunteer English Teacher</h3>
-            <p className="text-orange-500/80 text-sm font-medium uppercase tracking-wider">Rāmaññarațtha Buddhist University</p>
+          {/* Student Teacher Trainee */}
+          <div className="border-l-2 border-white/10 pl-6 group">
+            <h3 className="text-xl font-bold text-white">Student Teacher Trainee</h3>
+            <p className="text-orange-500/80 text-sm font-medium uppercase tracking-wider">Mawlamyine Education Degree College | 2019-2020</p> [cite: 51]
             <p className="text-gray-400 mt-2 max-w-2xl">
-              Taught foundational English to children aged 10-15, focusing on interactive learning 
-              and cross-cultural communication.
+              Led classroom sessions for groups of 15, mastering professional communication 
+              and organizational responsibility[cite: 52, 53].
             </p>
           </div>
         </div>
