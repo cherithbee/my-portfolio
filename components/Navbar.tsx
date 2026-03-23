@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function Navbar() {
   const [active, setActive] = useState('Home');
@@ -16,17 +15,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const observerOptions = {
-          root: null,
-          // We change -50% to -20%. 
-          // This means the link only changes when the section is clearly in view.
-          rootMargin: '-20% 0px -30% 0px', 
-          threshold: 0.2, // Requires 20% of the section to be visible
-        };
+      root: null,
+      rootMargin: '-20% 0px -30% 0px',
+      threshold: 0.2,
+    };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Capitalize the first letter to match our navLinks names
           const id = entry.target.id;
           const formattedName = id.charAt(0).toUpperCase() + id.slice(1);
           setActive(formattedName === "" ? "Home" : formattedName);
@@ -35,8 +31,6 @@ export default function Navbar() {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Watch all sections that have an ID
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => observer.observe(section));
 
@@ -47,17 +41,14 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
       <div className="w-full max-w-6xl flex justify-between items-center px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl">
         
-        {/* Left Branding */}
-        <div className="flex items-center gap-3">
-          <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20">
-            <Image src="/profile.jpg" alt="Pyae Phyo Aung" fill className="object-cover" />
-          </div>
-          <div className="text-white font-bold tracking-tighter text-lg hidden md:block">
+        {/* --- BRANDING (Text Only Now) --- */}
+        <div className="flex items-center pl-2">
+          <div className="text-white font-bold tracking-tighter text-xl">
             CB <span className="text-orange-400">🐝</span>
           </div>
         </div>
 
-        {/* Links with Auto-Scrolling Liquid Glass */}
+        {/* --- NAV LINKS --- */}
         <div className="flex gap-1 items-center">
           {navLinks.map((link) => (
             <a
