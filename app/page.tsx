@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 import { projects } from '@/data/projects';
+const safeProjects = projects || []; 
 
 export default function Home() {
   return (
@@ -67,12 +68,11 @@ export default function Home() {
           <div className="h-[1px] flex-1 bg-white/10"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
-          {/* ADD THE '?? []' BELOW TO PREVENT THE CRASH */}
-          {(projects ?? []).map((p, i) => (
-            <ProjectCard key={i} project={p} />
-          ))}
-        </div>
+      <div className="grid lg:grid-cols-2 gap-6">
+        {safeProjects.map((p, i) => (
+          <ProjectCard key={i} project={p} />
+        ))}
+      </div>
       </section>
 
       {/* 5. Contact Section */}
