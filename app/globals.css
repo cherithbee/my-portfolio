@@ -2,6 +2,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Adjust this value based on your Navbar height (approx 80px - 100px) */
+  scroll-padding-top: 100px; 
 }
 
 /* Any other custom styles for your background or fonts go below this */

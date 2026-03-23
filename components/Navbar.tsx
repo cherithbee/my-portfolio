@@ -16,10 +16,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const observerOptions = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px', // Triggers when the section is in the middle of the screen
-      threshold: 0,
-    };
+          root: null,
+          // We change -50% to -20%. 
+          // This means the link only changes when the section is clearly in view.
+          rootMargin: '-20% 0px -30% 0px', 
+          threshold: 0.2, // Requires 20% of the section to be visible
+        };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
