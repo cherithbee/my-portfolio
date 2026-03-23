@@ -1,8 +1,26 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
-import { projects } from '@/data/projects';
-const safeProjects = projects || []; 
+
+// Defining projects directly here prevents the "undefined" error on Netlify
+const projects = [
+  {
+    title: "Trash Sort AI: Eco Incentive Campus System",
+    description: "Engineered a YOLOv11 auditing terminal for real-time waste classification, achieving 80% mAP through high-reliability dataset construction.",
+    tags: ["YOLOv11", "AI Integration", "Roboflow"],
+    link: "https://github.com/cherithbee",
+    image: "/trash-sort.jpg" 
+  },
+  {
+    title: "RSU CIMSO Hospitality ERP Hackathon",
+    description: "Developed an innovative ERP solution for the hospitality industry, transforming complex datasets into user-friendly dashboards.",
+    tags: ["React", "Data Visualization", "ERP"],
+    link: "https://github.com/cherithbee",
+    image: "/cimso-project.jpg"
+  }
+];
+
+const safeProjects = projects || [];  
 
 export default function Home() {
   return (
