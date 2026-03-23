@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Any other custom styles for your background or fonts go below this */
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+}
