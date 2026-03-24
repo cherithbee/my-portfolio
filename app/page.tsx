@@ -2,10 +2,11 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 
-// 1. PROJECTS DATA (Updated to 2025 and cleaned of citations)
+// 1. PROJECTS DATA (Updated with specific 'year' fields for the badges)
 const PROJECTS_DATA = [
   {
     title: "Trash Sort AI: Eco Incentive Campus System",
+    year: "2026", 
     description: "Engineered a YOLOv11 auditing terminal for real-time waste classification, achieving 80% mAP through high-reliability dataset construction.",
     tags: ["YOLOv11", "AI Integration", "Roboflow"],
     link: "https://github.com/cherithbee",
@@ -13,6 +14,7 @@ const PROJECTS_DATA = [
   },
   {
     title: "RSU CIMSO Hospitality ERP Hackathon",
+    year: "2025", 
     description: "Developed an innovative ERP solution for the hospitality industry in 2025, transforming complex datasets into user-friendly dashboards.",
     tags: ["React.js", "Data Visualization", "ERP"],
     link: "https://github.com/cherithbee",

@@ -2,7 +2,8 @@ interface ProjectProps {
   project: {
     title: string;
     description: string;
-    tech: string[];
+    tags: string[]; // Changed from 'tech' to match your page.tsx data
+    year: string;   // Added year to the interface
     link: string;
   };
 }
@@ -14,8 +15,9 @@ export default function ProjectCard({ project }: any) {
         <h3 className="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
           {project.title}
         </h3>
+        {/* WE REMOVED THE HARDCODED 2026 HERE */}
         <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">
-          2026
+          {project.year ?? "2026"} 
         </span>
       </div>
       
@@ -24,7 +26,8 @@ export default function ProjectCard({ project }: any) {
       </p>
       
       <div className="flex flex-wrap gap-2">
-        {(project.tech ??[]).map((t: string) => (
+        {/* Changed 'tech' to 'tags' to match your PROJECTS_DATA in page.tsx */}
+        {(project.tags ?? []).map((t: string) => (
           <span key={t} className="px-3 py-1 bg-white/10 text-white text-[10px] font-medium rounded-full border border-white/5">
             {t}
           </span>
