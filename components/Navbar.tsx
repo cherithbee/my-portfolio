@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* CB Logo with Bee Emoji 🐝 */}
         <div className="mb-6 flex flex-col items-center">
           <span className="text-orange-500 font-black text-2xl italic leading-none">CB</span>
-          <span className="text-xl mt-1">🐝</span>
+          <span className="text-xl mt-1">🐝...</span>
         </div>
 
         <div className="flex flex-col gap-2 w-full">
