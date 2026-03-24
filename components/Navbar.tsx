@@ -20,7 +20,7 @@ export default function Navbar() {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-30% 0px -60% 0px', // Precise margin for backward scroll detection
+      rootMargin: '-30% 0px -60% 0px',
       threshold: 0,
     };
 
@@ -40,17 +40,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    // Vertical placement on the left
-    <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden md:block">
-      <div className="flex flex-col items-center gap-4 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-3xl relative">
+    // Keep it on the left side
+    <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden md:block">
+      <div className="flex flex-col items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 p-3 rounded-[2.5rem] relative">
         
         {/* CB Logo with Bee Emoji 🐝 */}
-        <div className="mb-6 flex flex-col items-center gap-1">
-          <span className="text-orange-500 font-bold text-2xl tracking-tighter italic">CB</span>
-          <span className="text-xl">🐝.....</span>
+        <div className="mb-6 flex flex-col items-center">
+          <span className="text-orange-500 font-black text-2xl italic leading-none">CB</span>
+          <span className="text-xl mt-1">🐝</span>
         </div>
 
-        <div className="flex flex-col gap-3 relative">
+        <div className="flex flex-col gap-2 w-full">
           {navLinks.map((link) => {
             const id = link.href.replace('#', '');
             const isActive = activeSection === id;
@@ -60,19 +60,17 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => handleClick(link.href)}
-                className={`relative px-3 py-4 text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300 rounded-xl z-10 ${
+                className={`relative px-4 py-3 text-[10px] uppercase tracking-widest font-bold transition-all duration-300 rounded-2xl z-10 text-center min-w-[100px] ${
                   isActive ? 'text-white' : 'text-gray-500 hover:text-white'
                 }`}
               >
-                {/* Vertical text orientation */}
-                <span className="[writing-mode:vertical-lr] rotate-180">
-                  {link.name}
-                </span>
+                {/* Text is now horizontal and readable */}
+                {link.name}
 
-                {/* Vertical Liquid Glass Indicator */}
+                {/* Liquid Glass Indicator */}
                 {isActive && (
                   <div 
-                    className="absolute inset-0 bg-orange-500/20 border border-orange-500/40 rounded-xl -z-10 shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-500"
+                    className="absolute inset-0 bg-orange-500/20 border border-orange-500/40 rounded-2xl -z-10 shadow-[0_0_20px_rgba(249,115,22,0.1)]"
                   />
                 )}
               </a>
