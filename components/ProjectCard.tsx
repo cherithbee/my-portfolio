@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: any) {
       </p>
       
       <div className="flex flex-wrap gap-2">
-        {project.tech.map((t: string) => (
+        {(project.tech ??[]).map((t: string) => (
           <span key={t} className="px-3 py-1 bg-white/10 text-white text-[10px] font-medium rounded-full border border-white/5">
             {t}
           </span>

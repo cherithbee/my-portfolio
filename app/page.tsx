@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 
-// 1. DATA DEFINED INSIDE THE FILE (Prevents the .map() undefined error)
 const PROJECTS_DATA = [
   {
     title: "Trash Sort AI: Eco Incentive Campus System",
@@ -14,7 +13,7 @@ const PROJECTS_DATA = [
   {
     title: "RSU CIMSO Hospitality ERP Hackathon",
     description: "Developed an innovative ERP solution for the hospitality industry, transforming complex datasets into user-friendly dashboards.",
-    tags: ["React", "Data Visualization", "ERP"],
+    tags: ["React.js", "Data Visualization", "ERP"],
     link: "https://github.com/cherithbee",
     image: "https://placehold.co/600x400/222/white?text=ERP+Dashboard"
   }
@@ -81,11 +80,12 @@ export default function Home() {
           <div className="h-[1px] flex-1 bg-white/10"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
-          {PROJECTS_DATA.map((p, i) => (
-            <ProjectCard key={i} project={p} />
-          ))}
-        </div>
+<div className="grid lg:grid-cols-2 gap-6">
+  {/* The '?? []' means: if PROJECTS_DATA is missing, use an empty list instead of crashing */}
+  {(PROJECTS_DATA ?? []).map((p, i) => (
+    <ProjectCard key={i} project={p} />
+  ))}
+</div>
       </section>
 
       {/* 5. Contact Section */}

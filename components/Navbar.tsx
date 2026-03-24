@@ -50,7 +50,7 @@ export default function Navbar() {
 
         {/* --- NAV LINKS --- */}
         <div className="flex gap-1 items-center">
-          {navLinks.map((link) => (
+          {(navLinks ?? []).map((link) => (
             <a
               key={link.name}
               href={link.href}
