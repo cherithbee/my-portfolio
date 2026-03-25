@@ -48,19 +48,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Experience Section */}
+{/* 3. Experience Section */}
       <section id="experience" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 bg-foreground/[0.02] scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-4xl font-bold tracking-tighter italic">Experience</h2>
+          <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Experience</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
         </div>
         
         <div className="space-y-12">
-          <div className="border-l-2 border-orange-500 pl-6 group">
-            <h3 className="text-xl font-bold">Volunteer English Teacher</h3>
-            <p className="text-orange-600 dark:text-orange-500 text-sm font-medium uppercase tracking-wider">Rāmaññarațtha Buddhist University | 2022-2023</p>
-            <p className="text-foreground/70 mt-2 max-w-2xl">
-              Designed English curriculum for children aged 10-15. Focused on adaptive leadership and clear communication.
+          {/* Experience 1: Volunteer English Teacher */}
+          <div className="border-l-2 border-orange-500 pl-6 group transition-all">
+            <h3 className="text-xl font-bold text-foreground">Volunteer English Teacher</h3>
+            <p className="text-orange-600 dark:text-orange-500 text-sm font-medium uppercase tracking-wider">
+              Rāmaññarațtha Buddhist University | 2022 - 2023
+            </p>
+            <p className="text-foreground/70 mt-2 max-w-2xl leading-relaxed">
+              Designed English curriculum for children aged 10-15. Focused on adaptive leadership, clear communication, and community engagement in a diverse educational environment.
+            </p>
+          </div>
+
+          {/* Experience 2: Teaching Assistant at RSU */}
+          <div className="border-l-2 border-orange-500/30 hover:border-orange-500 pl-6 group transition-all">
+            <h3 className="text-xl font-bold text-foreground">Teaching Assistant (ICT)</h3>
+            <p className="text-orange-600 dark:text-orange-500 text-sm font-medium uppercase tracking-wider">
+              Rangsit University | 2024 - Present
+            </p>
+            <p className="text-foreground/70 mt-2 max-w-2xl leading-relaxed">
+              Assisting in laboratory sessions for core ICT subjects. Helping peers understand complex programming concepts, debugging code, and supporting faculty in course material preparation.
             </p>
           </div>
         </div>
