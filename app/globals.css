@@ -7,22 +7,41 @@
   :root {
     --background: #ffffff;
     --foreground: #171717;
-    --card: #f9f9f9; /* Subtle gray for cards in light mode */
+    --card: #f9f9f9; 
     --border: #e5e5e5;
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    
+    /* Force smooth scrolling for the whole page */
+    scroll-behavior: smooth !important;
   }
 
   .dark {
     --background: #0a0a0a;
     --foreground: #ffffff;
-    --card: #141414; /* Deep black for cards in dark mode */
+    --card: #141414; 
     --border: #262626;
   }
+}
+
+/* Global Smooth Scroll and Performance Fixes */
+html {
+  scroll-behavior: smooth !important;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.5s ease, color 0.5s ease;
+  /* Improves rendering performance during scroll */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure sections have a gap so the Navbar doesn't cover titles */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Optimization for the Navbar's Sliding Pill */
+.will-change-transform {
+  will-change: transform;
 }

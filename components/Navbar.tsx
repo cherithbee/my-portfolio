@@ -81,14 +81,14 @@ export default function Navbar() {
 
         <div className="flex flex-col gap-1 w-full relative">
           
-          {/* THE SLIDING LIQUID GLASS PILL */}
-          <div 
-            className="absolute left-0 right-0 h-[52px] bg-orange-500/10 border border-orange-500/30 rounded-3xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[0_0_20px_rgba(249,115,22,0.1)]"
-            style={{ 
-              transform: `translateY(${activeIndex * (52 + 4)}px)`,
-              top: '0px'
-            }}
-          />
+{/* THE SLIDING LIQUID GLASS PILL */}
+<div 
+  className="absolute left-0 right-0 h-[52px] bg-orange-500/10 border border-orange-500/30 rounded-3xl transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[0_0_20px_rgba(249,115,22,0.1)] will-change-transform pointer-events-none"
+  style={{ 
+    transform: `translateY(${activeIndex * (52 + 4)}px)`,
+    top: '0px'
+  }}
+/>
 
           {navLinks.map((link, index) => {
             const id = link.href.replace('#', '');
