@@ -40,17 +40,16 @@ export default function Navbar() {
   }, []);
 
   return (
-    // Keep it on the left side
     <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden md:block">
-      <div className="flex flex-col items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 p-3 rounded-[2.5rem] relative">
+      <div className="flex flex-col items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-[3rem] relative shadow-2xl">
         
-        {/* CB Logo with Bee Emoji 🐝 */}
+        {/* CB Logo 🐝 */}
         <div className="mb-6 flex flex-col items-center">
           <span className="text-orange-500 font-black text-2xl italic leading-none">CB</span>
           <span className="text-xl mt-1">🐝...</span>
         </div>
 
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex flex-col gap-3 w-full relative">
           {navLinks.map((link) => {
             const id = link.href.replace('#', '');
             const isActive = activeSection === id;
@@ -60,17 +59,16 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => handleClick(link.href)}
-                className={`relative px-4 py-3 text-[10px] uppercase tracking-widest font-bold transition-all duration-300 rounded-2xl z-10 text-center min-w-[100px] ${
-                  isActive ? 'text-white' : 'text-gray-500 hover:text-white'
+                className={`relative px-6 py-4 text-[11px] uppercase tracking-[0.2em] font-bold transition-all duration-500 rounded-3xl z-10 text-center min-w-[120px] ${
+                  isActive ? 'text-white' : 'text-gray-500 hover:text-gray-300'
                 }`}
               >
-                {/* Text is now horizontal and readable */}
                 {link.name}
 
-                {/* Liquid Glass Indicator */}
+                {/* The "Liquid Glass" Indicator */}
                 {isActive && (
                   <div 
-                    className="absolute inset-0 bg-orange-500/20 border border-orange-500/40 rounded-2xl -z-10 shadow-[0_0_20px_rgba(249,115,22,0.1)]"
+                    className="absolute inset-0 bg-orange-500/10 border border-orange-500/30 rounded-3xl -z-10 shadow-[0_0_25px_rgba(249,115,22,0.15)] animate-in fade-in zoom-in duration-300"
                   />
                 )}
               </a>
