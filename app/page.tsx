@@ -26,12 +26,27 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground transition-colors duration-500 selection:bg-orange-500/30">
       <Navbar />
 
-      {/* 1. Hero / Home Section */}
+{/* 1. Hero / Home Section */}
       <section id="home" className="scroll-mt-20 md:pl-32">
         <Hero />
       </section>
 
-      {/* 2. Education Section */}
+      {/* 2. New About Section (Added for the Navbar link) */}
+      <section id="about" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">About Me</h2>
+          <div className="h-[1px] flex-1 bg-foreground/10"></div>
+        </div>
+        <div className="text-foreground/70 text-lg max-w-3xl leading-relaxed italic">
+          <p>
+            I am a third-year <span className="text-foreground font-semibold">ICT student at Rangsit University [cite: 8, 11]</span> 
+            specializing in <span className="text-foreground font-semibold">Node.js, AI integration, and Docker [cite: 8, 35, 38]</span>. 
+            Currently seeking a technical internship for the <span className="text-orange-500 font-bold">August 2026</span> term to contribute to scalable backend systems[cite: 2, 3, 9].
+          </p>
+        </div>
+      </section>
+
+      {/* 3. Your Education Section (Kept exactly as you requested) */}
       <section id="education" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Education</h2>
@@ -42,32 +57,32 @@ export default function Home() {
           {/* 1. Rangsit University */}
           <div>
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-xl font-bold text-foreground">Rangsit University</h3>
-              <span className="text-orange-500 font-medium italic">08/2023 — Present</span>
+              <h3 className="text-xl font-bold text-foreground">Rangsit University [cite: 11]</h3>
+              <span className="text-orange-500 font-medium italic">08/2023 — Present [cite: 14]</span>
             </div>
-            <p className="text-foreground/80 font-medium italic">Bachelor of Science in Information and Communication Technology</p>
-            <p className="text-orange-600 dark:text-orange-500 font-bold mt-1 tracking-wider">GPA: 3.72 / 4.00</p>
+            <p className="text-foreground/80 font-medium italic">Bachelor of Science in Information and Communication Technology [cite: 12, 13]</p>
+            <p className="text-orange-600 dark:text-orange-500 font-bold mt-1 tracking-wider">GPA: 3.72 / 4.00 [cite: 15]</p>
             <p className="text-foreground/60 mt-3 text-sm leading-relaxed max-w-2xl">
-              Relevant Coursework: Database Management Systems, Web Development, Systems Analysis and Design.
+              Relevant Coursework: Database Management Systems, Web Development, Systems Analysis and Design[cite: 16, 17, 18].
             </p>
           </div>
 
           {/* 2. Mawlamyine Education Degree College */}
           <div>
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-xl font-bold text-foreground">Mawlamyine Education Degree College</h3>
-              <span className="text-foreground/40 text-sm">12/2019 — 03/2020</span>
+              <h3 className="text-xl font-bold text-foreground">Mawlamyine Education Degree College [cite: 21]</h3>
+              <span className="text-foreground/40 text-sm">12/2019 — 03/2020 [cite: 22]</span>
             </div>
-            <p className="text-foreground/70 text-sm italic">Foundational coursework in Educational Studies and Pedagogy.</p>
+            <p className="text-foreground/70 text-sm italic">Foundational coursework in Educational Studies and Pedagogy[cite: 23].</p>
           </div>
 
           {/* 3. Basic Education High School No. 9 */}
           <div>
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-xl font-bold text-foreground italic">Basic Education High School No. (9)</h3>
-              <span className="text-foreground/40 text-sm">06/2013 — 03/2019</span>
+              <h3 className="text-xl font-bold text-foreground italic">Basic Education High School No. (9) [cite: 26]</h3>
+              <span className="text-foreground/40 text-sm">06/2013 — 03/2019 [cite: 26]</span>
             </div>
-            <p className="text-foreground/70 text-sm italic">High School Diploma | Mawlamyine</p>
+            <p className="text-foreground/70 text-sm italic">High School Diploma | Mawlamyine [cite: 26]</p>
           </div>
         </div>
       </section>

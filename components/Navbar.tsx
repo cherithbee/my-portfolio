@@ -5,8 +5,8 @@ import { Sun, Moon } from 'lucide-react'; // 2. Import icons (Make sure to insta
 
 const navLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Education', href: '#education' },
+  { name: 'About', href: '#about' },      // Back in the list!
+  { name: 'Education', href: '#education' }, 
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
