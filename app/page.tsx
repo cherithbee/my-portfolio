@@ -27,55 +27,94 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground transition-colors duration-500 selection:bg-orange-500/30">
       <Navbar />
 
-      {/* 1. Hero / Home Section */}
+{/* 1. Hero / Home Section */}
       <section id="home" className="scroll-mt-20 md:pl-32">
         <Hero />
       </section>
 
-      {/* 2. About Me Section */}
-      <section id="about" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
+      {/* 2. Education Section (Above Experience) */}
+      <section id="education" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-4xl font-bold tracking-tighter italic">About Me</h2>
-          <div className="h-[1px] flex-1 bg-foreground/10"></div>
-        </div>
-        <div className="text-foreground/70 text-lg max-w-3xl leading-relaxed">
-          <p>
-            I am a third-year <span className="text-foreground font-semibold">ICT student at Rangsit University</span> 
-            with a current <span className="text-orange-500 font-bold">GPA of 3.72</span>. 
-            I specialize in <span className="text-foreground">Node.js, AI integration, and Docker</span>. 
-            Currently seeking a technical internship for August 2026 to contribute to scalable systems.
-          </p>
-        </div>
-      </section>
-
-{/* 3. Experience Section */}
-      <section id="experience" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 bg-foreground/[0.02] scroll-mt-20">
-        <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Experience</h2>
+          <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Education</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
         </div>
         
         <div className="space-y-12">
-          {/* Experience 1: Volunteer English Teacher */}
-          <div className="border-l-2 border-orange-500 pl-6 group transition-all">
-            <h3 className="text-xl font-bold text-foreground">Volunteer English Teacher</h3>
-            <p className="text-orange-600 dark:text-orange-500 text-sm font-medium uppercase tracking-wider">
-              Rāmaññarațtha Buddhist University | 2022 - 2023
-            </p>
-            <p className="text-foreground/70 mt-2 max-w-2xl leading-relaxed">
-              Designed English curriculum for children aged 10-15. Focused on adaptive leadership, clear communication, and community engagement in a diverse educational environment.
+          {/* Rangsit University */}
+          <div>
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-xl font-bold text-foreground">Rangsit University</h3>
+              <span className="text-orange-500 font-medium">2023 — Present</span>
+            </div>
+            <p className="text-foreground/80 font-medium">Bachelor of Science in Information and Communication Technology [cite: 11, 12, 13]</p>
+            <p className="text-orange-600 dark:text-orange-500 font-bold mt-1">GPA: 3.72 / 4.00 [cite: 15]</p>
+            <p className="text-foreground/60 mt-3 text-sm leading-relaxed">
+              Relevant Coursework: Database Management Systems, Web Development, Systems Analysis and Design[cite: 16, 17, 18].
             </p>
           </div>
 
-          {/* Experience 2: Teaching Assistant at RSU */}
-          <div className="border-l-2 border-orange-500/30 hover:border-orange-500 pl-6 group transition-all">
-            <h3 className="text-xl font-bold text-foreground">Teaching Assistant (ICT)</h3>
+          {/* Mawlamyine Education Degree College */}
+          <div className="opacity-80">
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-xl font-bold text-foreground">Mawlamyine Education Degree College</h3>
+              <span className="text-foreground/50">2019 — 2020</span>
+            </div>
+            <p className="text-foreground/70">Foundational coursework in Educational Studies and Pedagogy[cite: 22, 23].</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Experience Section */}
+      <section id="experience" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 bg-foreground/[0.02] scroll-mt-20">
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Professional Experience</h2>
+          <div className="h-[1px] flex-1 bg-foreground/10"></div>
+        </div>
+        
+        <div className="space-y-12 mb-20">
+          <div className="border-l-2 border-orange-500 pl-6">
+            <h3 className="text-xl font-bold text-foreground">Volunteer English Teacher</h3>
             <p className="text-orange-600 dark:text-orange-500 text-sm font-medium uppercase tracking-wider">
-              Rangsit University | 2024 - Present
+              Rāmaññarațtha Buddhist University | 06/2022 – 05/2023 [cite: 54, 55]
             </p>
-            <p className="text-foreground/70 mt-2 max-w-2xl leading-relaxed">
-              Assisting in laboratory sessions for core ICT subjects. Helping peers understand complex programming concepts, debugging code, and supporting faculty in course material preparation.
+            <ul className="text-foreground/70 mt-4 list-disc list-inside space-y-1 text-sm">
+              <li>Designed curriculum for children aged 10–15[cite: 56].</li>
+              <li>Simplified complex topics for diverse learners[cite: 57].</li>
+            </ul>
+          </div>
+
+          <div className="border-l-2 border-orange-500/30 pl-6">
+            <h3 className="text-xl font-bold text-foreground">Student Teacher Trainee</h3>
+            <p className="text-orange-600 dark:text-orange-500 text-sm font-medium uppercase tracking-wider">
+              Mawlamyine Education Degree College | 12/2019 – 03/2020 [cite: 51]
             </p>
+            <ul className="text-foreground/70 mt-4 list-disc list-inside space-y-1 text-sm">
+              <li>Led classroom sessions for groups of 10–15[cite: 52].</li>
+              <li>Managed schedules and lesson plans[cite: 53].</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* LANGUAGES (Under Experience) */}
+        <div className="pt-12 border-t border-foreground/5">
+          <h3 className="text-sm uppercase tracking-[0.2em] text-orange-500 font-bold mb-6">Languages</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div>
+              <p className="text-foreground font-bold">Mon</p>
+              <p className="text-foreground/50 text-xs">Native [cite: 28]</p>
+            </div>
+            <div>
+              <p className="text-foreground font-bold">Burmese</p>
+              <p className="text-foreground/50 text-xs">Native [cite: 28]</p>
+            </div>
+            <div>
+              <p className="text-foreground font-bold">English</p>
+              <p className="text-foreground/50 text-xs">B2 Level [cite: 29]</p>
+            </div>
+            <div>
+              <p className="text-foreground font-bold">Thai</p>
+              <p className="text-foreground/50 text-xs">Listening & Speaking [cite: 30]</p>
+            </div>
           </div>
         </div>
       </section>
