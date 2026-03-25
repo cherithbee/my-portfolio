@@ -1,13 +1,30 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-  /* Adjust this value based on your Navbar height (approx 80px - 100px) */
-  scroll-padding-top: 100px; 
+@layer base {
+  :root {
+    /* LIGHT MODE COLORS */
+    --background: #ffffff;
+    --foreground: #171717;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  .dark {
+    /* DARK MODE COLORS (The original #0a0a0a) */
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+  }
 }
 
-/* Any other custom styles for your background or fonts go below this */
-:root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
+/* Apply the variables to the body */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+}
+
+/* Ensure smooth scrolling works across the app */
+html {
+  scroll-behavior: smooth;
 }
