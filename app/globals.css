@@ -10,7 +10,7 @@
     --card: #f9f9f9; 
     --border: #e5e5e5;
     
-    /* Force smooth scrolling for the whole page */
+    /* Force smooth scrolling at the root level */
     scroll-behavior: smooth !important;
   }
 
@@ -22,26 +22,39 @@
   }
 }
 
-/* Global Smooth Scroll and Performance Fixes */
+/* Performance and Smoothness Fixes */
 html {
   scroll-behavior: smooth !important;
+  /* Fixes potential "jitter" on mobile browsers */
+  height: -webkit-fill-available;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.5s ease, color 0.5s ease;
-  /* Improves rendering performance during scroll */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
-/* Ensure sections have a gap so the Navbar doesn't cover titles */
+/* Section Spacing for Navbar Anchors */
 section {
+  /* This prevents your headings from being hidden behind the floating navbar */
   scroll-margin-top: 100px;
 }
 
-/* Optimization for the Navbar's Sliding Pill */
+/* Mobile Navbar Helper: Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hardware Acceleration for the Sliding Pill */
 .will-change-transform {
   will-change: transform;
 }
