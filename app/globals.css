@@ -1,30 +1,28 @@
 @import "tailwindcss";
 
+/* This is the magic line for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    /* LIGHT MODE COLORS */
     --background: #ffffff;
     --foreground: #171717;
+    --card: #f9f9f9; /* Subtle gray for cards in light mode */
+    --border: #e5e5e5;
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
   }
 
   .dark {
-    /* DARK MODE COLORS (The original #0a0a0a) */
     --background: #0a0a0a;
     --foreground: #ffffff;
+    --card: #141414; /* Deep black for cards in dark mode */
+    --border: #262626;
   }
 }
 
-/* Apply the variables to the body */
 body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.5s ease, color 0.5s ease;
-  min-height: 100vh;
-}
-
-/* Ensure smooth scrolling works across the app */
-html {
-  scroll-behavior: smooth;
 }
