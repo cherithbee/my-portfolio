@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// 1. Import the ThemeProvider (Make sure you create this file in Step 2!)
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +31,18 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body 
-        className="min-h-full flex flex-col bg-[#0a0a0a] text-white"
+        className="min-h-full flex flex-col bg-[#0a0a0a] text-white transition-colors duration-500"
         suppressHydrationWarning
       >
-        {children}
+        {/* 2. Wrap the children in the ThemeProvider */}
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="system" 
+          enableSystem 
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
