@@ -9,8 +9,6 @@
     --foreground: #171717;
     --card: #f9f9f9; 
     --border: #e5e5e5;
-    
-    /* Force smooth scrolling at the root level */
     scroll-behavior: smooth !important;
   }
 
@@ -22,11 +20,12 @@
   }
 }
 
-/* Performance and Smoothness Fixes */
+/* 1. Performance and Smoothness */
 html {
   scroll-behavior: smooth !important;
-  /* Fixes potential "jitter" on mobile browsers */
   height: -webkit-fill-available;
+  /* Fixes rubber-banding on mobile */
+  overflow-x: hidden;
 }
 
 body {
@@ -37,15 +36,17 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  /* Prevents horizontal layout shifts */
+  overflow-x: hidden;
 }
 
-/* Section Spacing for Navbar Anchors */
+/* 2. Section Anchors */
 section {
-  /* This prevents your headings from being hidden behind the floating navbar */
+  /* This ensures that when you click a link, the heading isn't covered by the nav */
   scroll-margin-top: 100px;
 }
 
-/* Mobile Navbar Helper: Hide scrollbar but keep functionality */
+/* 3. The Navbar Logic */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -54,7 +55,28 @@ section {
   scrollbar-width: none;
 }
 
-/* Hardware Acceleration for the Sliding Pill */
+/* 4. Animation Optimization (THE FIX FOR THE JUMPING) */
 .will-change-transform {
   will-change: transform;
+  /* Forces the browser to use the GPU for the orange pill */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 5. iOS Glassmorphism Enhancement */
+.backdrop-blur-2xl {
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+/* Optional: Add a subtle shine to the glass */
+.dark .backdrop-blur-2xl {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Prevents text from flickering during the theme transition */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }

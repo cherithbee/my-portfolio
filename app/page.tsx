@@ -26,13 +26,13 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground transition-colors duration-500 selection:bg-orange-500/30">
       <Navbar />
 
-{/* 1. Hero / Home Section */}
-      <section id="home" className="scroll-mt-20 md:pl-32">
+      {/* 1. Hero / Home Section */}
+   <section id="home" className="scroll-mt-20 md:pl-64">
         <Hero />
       </section>
 
-      {/* 2. About Section */}
-      <section id="about" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
+      {/* 2. About Section (Landing for the 'About' Nav link) */}
+      <section id="about" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">About Me</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -46,8 +46,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Education Section */}
-      <section id="education" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
+      {/* 3. Education Section (Full History) */}
+      <section id="education" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Education</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -87,8 +87,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Experience Section */}
-      <section id="experience" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 bg-foreground/[0.02] scroll-mt-20">
+      {/* 4. Experience Section */}
+      <section id="experience" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 bg-foreground/[0.02] scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Professional Experience</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -142,10 +142,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Projects Section */}
-      <section id="projects" className="max-w-6xl mx-auto px-6 md:pl-32 py-24 border-t border-foreground/10 scroll-mt-20">
+      {/* 5. Projects Section */}
+      <section id="projects" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-4xl font-bold tracking-tighter italic">Featured Work</h2>
+          <h2 className="text-4xl font-bold tracking-tighter italic text-foreground">Featured Work</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
         </div>
         <div className="grid lg:grid-cols-2 gap-6">
@@ -155,8 +155,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Contact Section */}
-      <section id="contact" className="max-w-6xl mx-auto px-6 md:pl-32 py-32 border-t border-foreground/10 scroll-mt-20">
+      {/* 6. Contact Section */}
+      <section id="contact" className="max-w-6xl mx-auto px-6 md:pl-48 py-32 border-t border-foreground/10 scroll-mt-20">
         <div className="flex flex-col items-center text-center space-y-12">
           <div className="space-y-4">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground italic">
