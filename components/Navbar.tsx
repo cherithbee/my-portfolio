@@ -28,10 +28,15 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const movePill = (index: number, speed: 'fast' | 'slow' = 'slow') => {
+const movePill = (index: number, speed: 'fast' | 'slow' = 'slow') => {
     if (!pillRef.current) return;
     const duration = speed === 'fast' ? 0.4 : 0.6;
-    const spacing = isMobile ? (90 + 4) : (52 + 4); 
+    
+    // ADJUST THIS LINE:
+    // On mobile, the width is 100px (min-w) + 4px (gap) = 104px
+    // On desktop, the height is 52px + 4px (gap) = 56px
+    const spacing = isMobile ? (100 + 4) : (52 + 4); 
+    
     const axis = isMobile ? 'X' : 'Y';
     
     pillRef.current.style.transition = `transform ${duration}s cubic-bezier(0.23, 1, 0.32, 1)`;
@@ -107,9 +112,15 @@ export default function Navbar() {
                     isManualScrolling.current = false;
                   }, 800); 
                 }}
-                className={`relative px-4 md:px-6 py-3 md:py-4 text-[10px] md:text-[11px] h-[40px] md:h-[52px] flex items-center justify-center uppercase tracking-[0.2em] font-bold z-10 text-center min-w-[100px] md:min-w-[140px] shrink-0 outline-none transition-all duration-300 hover:scale-110 active:scale-95 ${
-                  activeSection === id ? 'text-white' : 'text-gray-600 dark:text-gray-400'
-                }`}
+className={`relative px-4 md:px-6 py-3 md:py-4 text-[10px] md:text-[11px] 
+  h-[40px] md:h-[52px] flex items-center justify-center uppercase 
+  tracking-[0.2em] font-bold z-10 text-center 
+  /* FIXED WIDTH FOR PERFECT MATH */
+  w-[100px] md:w-[140px] 
+  shrink-0 outline-none transition-all duration-300 
+  hover:scale-110 active:scale-95 ${
+    activeSection === id ? 'text-white' : 'text-gray-600 dark:text-gray-400'
+  }`}
               >
                 {link.name}
               </button>
