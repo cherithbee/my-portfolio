@@ -6,7 +6,7 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #171717; /* Solid Black/Dark Gray */
+    --foreground: #171717;
     --card: #f9f9f9; 
     --border: #e5e5e5;
     scroll-behavior: smooth !important;
@@ -14,7 +14,7 @@
 
   .dark {
     --background: #0a0a0a;
-    --foreground: #ffffff; /* Solid White */
+    --foreground: #ffffff;
     --card: #141414; 
     --border: #262626;
   }
@@ -24,21 +24,25 @@
 html {
   scroll-behavior: smooth !important;
   height: -webkit-fill-available;
+  /* Fixes rubber-banding on mobile */
   overflow-x: hidden;
 }
 
 body {
   background-color: var(--background);
-  color: var(--foreground); /* Forces the whole body to use the variable */
+  color: var(--foreground);
   transition: background-color 0.5s ease, color 0.5s ease;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  /* Prevents horizontal layout shifts */
   overflow-x: hidden;
 }
 
 /* 2. Section Anchors */
 section {
+  /* This ensures that when you click a link, the heading isn't covered by the nav */
   scroll-margin-top: 100px;
 }
 
@@ -51,9 +55,10 @@ section {
   scrollbar-width: none;
 }
 
-/* 4. Animation Optimization */
+/* 4. Animation Optimization (THE FIX FOR THE JUMPING) */
 .will-change-transform {
   will-change: transform;
+  /* Forces the browser to use the GPU for the orange pill */
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -65,20 +70,13 @@ section {
   backdrop-filter: blur(20px) saturate(180%) !important;
 }
 
-/* THE CRITICAL FIX: Ensure all text inherits the variable color */
+/* Optional: Add a subtle shine to the glass */
+.dark .backdrop-blur-2xl {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Prevents text from flickering during the theme transition */
 * {
-  /* Added 'color' to the transition list so it doesn't stay white */
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-/* This forces text with opacity classes (like text-foreground/70) 
-   to actually use the dark color in light mode */
-.text-foreground, 
-[class*="text-foreground/"] {
-  color: var(--foreground) !important;
-}
-
-/* Optional: Subtle opacity for muted text while maintaining visibility */
-[class*="text-foreground/70"] { opacity: 0.7; }
-[class*="text-foreground/60"] { opacity: 0.6; }
-[class*="text-foreground/50"] { opacity: 0.5; }

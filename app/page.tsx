@@ -37,11 +37,12 @@ export default function Home() {
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">About Me</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
         </div>
-        <div className="text-foreground/70 text-lg max-w-3xl leading-relaxed italic">
+        {/* CHANGED text-foreground/70 TO text-foreground + opacity-80 FOR VISIBILITY */}
+        <div className="text-foreground opacity-80 text-lg max-w-3xl leading-relaxed italic">
           <p>
-            I am a third-year <span className="text-foreground font-semibold">ICT student at Rangsit University</span> 
-            specializing in <span className="text-foreground font-semibold">Node.js, AI integration, and Docker</span>. 
-            Currently seeking a technical internship for the <span className="text-orange-500 font-bold">August 2026</span> term to contribute to scalable backend systems.
+            I am a third-year <span className="text-foreground font-extrabold">ICT student at Rangsit University</span> 
+            specializing in <span className="text-foreground font-extrabold">Node.js, AI integration, and Docker</span>. 
+            Currently seeking a technical internship for the <span className="text-orange-600 dark:text-orange-500 font-black">August 2026</span> term.
           </p>
         </div>
       </section>
