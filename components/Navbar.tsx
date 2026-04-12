@@ -108,15 +108,16 @@ const movePill = (index: number, speed: 'fast' | 'slow' = 'slow') => {
         movePill(index, 'fast');
         setTimeout(() => { isManualScrolling.current = false; }, 800); 
       }}
-className={`relative px-4 md:px-6 py-3 md:py-4 text-[10px] md:text-[11px] 
-  h-[40px] md:h-[52px] flex items-center justify-center uppercase 
-  tracking-[0.2em] font-bold z-10 text-center w-[100px] md:w-[140px] 
-  shrink-0 outline-none transition-all duration-300 
-  hover:scale-110 active:scale-95 
-  ${isActive 
-    ? 'text-orange-600 dark:text-orange-400' 
-    : 'text-black opacity-70 dark:text-white dark:opacity-60' 
-  }`}
+      className={`relative px-4 md:px-6 py-3 md:py-4 text-[10px] md:text-[11px] 
+        h-[40px] md:h-[52px] flex items-center justify-center uppercase 
+        tracking-[0.2em] font-bold z-10 text-center w-[100px] md:w-[140px] 
+        shrink-0 outline-none transition-all duration-300 
+        hover:scale-110 active:scale-95 
+        /* THE ULTIMATE COLOR FIX */
+        ${isActive 
+          ? 'text-orange-600 dark:text-orange-400' 
+          : 'text-black/80 dark:text-white/90' 
+        }`}
     >
       {link.name}
     </button>
