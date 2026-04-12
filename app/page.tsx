@@ -40,7 +40,7 @@ export default function Home() {
         <div className="text-foreground/70 text-lg max-w-3xl leading-relaxed italic">
           <p>
             I am a third-year <span className="text-foreground font-semibold">ICT student at Rangsit University</span> 
-            specializing in <span className="text-foreground font-semibold">Node.js, AI integration, and Docker</span>. 
+             specializing in <span className="text-foreground font-semibold">Node.js, AI integration, and Docker</span>. 
             Currently seeking a technical internship for the <span className="text-orange-500 font-bold">August 2026</span> term to contribute to scalable backend systems.
           </p>
         </div>
