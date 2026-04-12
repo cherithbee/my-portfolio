@@ -81,11 +81,12 @@ const movePill = (index: number, speed: 'fast' | 'slow' = 'slow') => {
 {theme === 'dark' ? <Sun size={18} className="text-orange-400" /> : <Moon size={18} className="text-gray-400" />}        </button>
 
         <div className="flex flex-row md:flex-col gap-1 w-full relative no-scrollbar md:overflow-visible overflow-x-auto h-auto">
+{/* 1. THE PILL: Change from white/20 to orange in light mode */}
           <div 
             ref={pillRef}
-            className="absolute bg-white/20 dark:bg-orange-500/20 border border-white/40 dark:border-orange-500/40 rounded-3xl z-0 will-change-transform"
+            className="absolute bg-orange-500/10 dark:bg-orange-500/20 border border-orange-500/50 dark:border-orange-500/40 rounded-3xl z-0 will-change-transform"
             style={{ 
-              width: isMobile ? '90px' : '100%', 
+              width: isMobile ? '100px' : '100%', 
               height: isMobile ? '40px' : '52px',
               top: 0,
               left: 0,
@@ -94,33 +95,24 @@ const movePill = (index: number, speed: 'fast' | 'slow' = 'slow') => {
 
           {navLinks.map((link, index) => {
             const id = link.href.replace('#', '');
+            const isActive = activeSection === id;
             return (
               <button
                 key={link.name}
                 onClick={() => {
-                  // 1. LOCK the observer so it doesn't jump
                   isManualScrolling.current = true;
-                  
                   const element = document.getElementById(id);
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  
                   setActiveSection(id);
-                  movePill(index, 'fast'); // High speed for clicks
-
-                  // 2. UNLOCK the observer after the animation finishes
-                  setTimeout(() => {
-                    isManualScrolling.current = false;
-                  }, 800); 
+                  movePill(index, 'fast');
+                  setTimeout(() => { isManualScrolling.current = false; }, 800); 
                 }}
-className={`relative px-4 md:px-6 py-3 md:py-4 text-[10px] md:text-[11px] 
-  h-[40px] md:h-[52px] flex items-center justify-center uppercase 
-  tracking-[0.2em] font-bold z-10 text-center 
-  /* FIXED WIDTH FOR PERFECT MATH */
-  w-[100px] md:w-[140px] 
-  shrink-0 outline-none transition-all duration-300 
-  hover:scale-110 active:scale-95 ${
-    activeSection === id ? 'text-white' : 'text-gray-600 dark:text-gray-400'
-  }`}
+                /* 2. THE TEXT: Ensure active text is orange or white */
+                className={`relative px-4 md:px-6 py-3 md:py-4 text-[10px] md:text-[11px] h-[40px] md:h-[52px] flex items-center justify-center uppercase tracking-[0.2em] font-bold z-10 text-center w-[100px] md:w-[140px] shrink-0 outline-none transition-all duration-300 hover:scale-110 active:scale-95 
+                  ${isActive 
+                    ? 'text-orange-600 dark:text-orange-400' // Selected: Orange
+                    : 'text-foreground opacity-60'          // Unselected: Black/Gray
+                  }`}
               >
                 {link.name}
               </button>
