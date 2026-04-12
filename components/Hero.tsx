@@ -42,22 +42,23 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* --- ACTION BUTTONS --- */}
+{/* --- ACTION BUTTONS --- */}
       <div className="flex flex-wrap gap-4 mt-12 justify-center">
+        {/* Download Resume: Added Border & Themed Colors */}
         <a 
           href="/resume.pdf" 
           download="Pyae_Phyo_Aung_Resume.pdf"
-          /* Changed bg-white text-black to a dynamic theme-aware button */
-          className="bg-foreground text-background px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105"
+          className="bg-foreground text-background border-2 border-foreground/10 px-8 py-3 rounded-full font-bold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all transform hover:scale-105"
         >
           Download Resume
         </a>
+
+        {/* View GitHub: Added Orange Pop on Hover */}
         <a 
           href="https://github.com/cherithbee"
           target="_blank" 
           rel="noopener noreferrer" 
-          /* Changed border-white/10 text-white to border-foreground/20 text-foreground */
-          className="bg-foreground/5 border border-foreground/20 text-foreground px-8 py-3 rounded-full font-bold hover:bg-foreground/10 transition-all flex items-center gap-2"
+          className="bg-foreground/5 border border-foreground/20 text-foreground px-8 py-3 rounded-full font-bold hover:border-orange-500 hover:text-orange-500 hover:bg-orange-500/5 transition-all flex items-center gap-2 transform hover:scale-105"
         >
           View GitHub
         </a>
