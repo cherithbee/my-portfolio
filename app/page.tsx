@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const PROJECTS_DATA = [
   {
@@ -32,7 +33,8 @@ export default function Home() {
       </section>
 
       {/* 2. About Section (Landing for the 'About' Nav link) */}
-      <section id="about" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
+    <section id="about" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
+      <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">About Me</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -44,10 +46,12 @@ export default function Home() {
             Currently seeking a technical internship for the <span className="text-orange-500 font-bold">August 2026</span> term to contribute to scalable backend systems.
           </p>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* 3. Education Section (Full History) */}
       <section id="education" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
+        <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Education</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -85,10 +89,12 @@ export default function Home() {
             <p className="text-foreground/70 text-sm italic">High School Diploma | Mawlamyine</p>
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* 4. Experience Section */}
       <section id="experience" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 bg-foreground/[0.02] scroll-mt-20">
+        <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter text-foreground italic">Professional Experience</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -140,10 +146,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* 5. Projects Section */}
       <section id="projects" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
+        <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter italic text-foreground">Featured Work</h2>
           <div className="h-[1px] flex-1 bg-foreground/10"></div>
@@ -153,10 +161,12 @@ export default function Home() {
             <ProjectCard key={i} project={p} />
           ))}
         </div>
+        </ScrollReveal>
       </section>
 
       {/* 6. Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-6 md:pl-48 py-32 border-t border-foreground/10 scroll-mt-20">
+        <ScrollReveal>
         <div className="flex flex-col items-center text-center space-y-12">
           <div className="space-y-4">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground italic">
@@ -192,6 +202,7 @@ export default function Home() {
             ICT Student at Rangsit University 🇹🇭
           </div>
         </div>
+        </ScrollReveal>
       </section>
 
       <footer className="py-12 border-t border-foreground/10 text-center text-foreground/50 text-xs md:text-sm">
