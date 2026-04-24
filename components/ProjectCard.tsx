@@ -20,26 +20,28 @@ export default function ProjectCard({ project }: ProjectProps) {
       className="block group relative p-4 rounded-3xl bg-foreground/[0.03] border border-foreground/10 hover:border-orange-500/50 transition-all duration-500 backdrop-blur-sm overflow-hidden"
     >
       {/* --- BROWSER WINDOW UI --- */}
-      <div className="relative h-56 w-full mb-6 rounded-2xl overflow-hidden border border-foreground/10 bg-black/20">
+      <div className="relative h-56 w-full mb-6 rounded-2xl overflow-hidden border border-foreground/10 bg-black/40">
         {/* Browser Top Bar with Dots */}
-        <div className="absolute top-0 left-0 right-0 h-7 bg-foreground/5 border-b border-foreground/10 flex items-center px-3 gap-1.5 z-20 backdrop-blur-md">
+        <div className="absolute top-0 left-0 right-0 h-7 bg-foreground/10 border-b border-foreground/10 flex items-center px-3 gap-1.5 z-20 backdrop-blur-md">
           <div className="w-2 h-2 rounded-full bg-red-500/40" />
           <div className="w-2 h-2 rounded-full bg-yellow-500/40" />
           <div className="w-2 h-2 rounded-full bg-green-500/40" />
-          <div className="ml-2 h-3 w-24 bg-foreground/5 rounded-sm" /> {/* Fake URL Bar */}
+          <div className="ml-2 h-3 w-24 bg-foreground/5 rounded-sm" />
         </div>
 
-        <Image 
-          src={project.image || "https://placehold.co/600x400/222/white?text=Project+Preview"} 
-          alt={project.title}
-          fill
-          className="object-cover pt-7 transition-transform duration-700 group-hover:scale-105"
+        {/* --- LIVE IFRAME VERSION --- */}
+        {/* Note: If the site blocks iframes (X-Frame-Options), this will be blank */}
+        <iframe 
+          src={project.link} 
+          className="w-[120%] h-[120%] origin-top-left scale-[0.85] pt-10 border-none pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity" 
+          title={project.title}
+          scrolling="no"
         />
         
-        {/* Hover Overlay: "Visit Site" button */}
-        <div className="absolute inset-0 bg-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center pt-7">
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center pt-7 z-30">
            <div className="bg-white text-black px-4 py-2 rounded-full text-[10px] font-black shadow-2xl flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-             VISIT HACKATHON SITE <span className="text-lg">↗</span>
+             VISIT LIVE SITE <span className="text-lg">↗</span>
            </div>
         </div>
       </div>
@@ -59,7 +61,6 @@ export default function ProjectCard({ project }: ProjectProps) {
           {project.description}
         </p>
         
-        {/* --- TECHNOLOGY TAGS --- */}
         <div className="flex flex-wrap gap-2">
           {(project.tags ?? []).map((t: string) => (
             <span 
