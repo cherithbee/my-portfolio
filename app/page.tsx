@@ -16,7 +16,7 @@ const PROJECTS_DATA = [
     title: "RSU CIMSO Hospitality ERP Hackathon",
     year: "2025", 
     description: "Developed an innovative ERP solution for the hospitality industry in 2025, transforming complex datasets into user-friendly dashboards.",
-    tags: ["React.js", "Data Visualization", "ERP"],
+    tags: ["React.js", "Data Visualization", "ERP", "AI Integration"],
     link: "https://rsuip.org/rsu-gears-up-for-the-hospitality-erp-hackathon-2025-with-a-prize-pool-of-100000-thb/#:~:text=100%2C000%20THB%20%F0%9F%92%B0-,%F0%9F%8E%89%20RSU%20Gears%20Up%20for%20the%20%E2%80%9CHospitality%20ERP%20Hackathon%202025,Pool%20of%20100%2C000%20THB%20%F0%9F%92%B0&text=Rangsit%20University%2C%20through%20the%20Rangsit,systems%20for%20the%20hospitality%20industry.&text=A%20total%20prize%20pool%20of,innovations%20on%20an%20international%20stage!https://rsuip.org/rsu-gears-up-for-the-hospitality-erp-hackathon-2025-with-a-prize-pool-of-100000-thb/#:~:text=100%2C000%20THB%20%F0%9F%92%B0-,%F0%9F%8E%89%20RSU%20Gears%20Up%20for%20the%20%E2%80%9CHospitality%20ERP%20Hackathon%202025,Pool%20of%20100%2C000%20THB%20%F0%9F%92%B0&text=Rangsit%20University%2C%20through%20the%20Rangsit,systems%20for%20the%20hospitality%20industry.&text=A%20total%20prize%20pool%20of,innovations%20on%20an%20international%20stage!",
     image: "https://placehold.co/600x400/222/white?text=ERP+Dashboard"
   }
