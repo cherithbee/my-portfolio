@@ -193,6 +193,15 @@ export default function Home() {
               <span className="text-[10px] uppercase tracking-widest text-orange-500 font-bold mb-2">LINE ID</span>
               <span className="text-lg font-bold text-foreground group-hover:text-orange-500 transition-colors">cherith_bee</span>
             </a>
+            <a 
+              href="https://www.linkedin.com/in/pyaephyo-aung-a60a8028b" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-start p-6 rounded-3xl bg-foreground/[0.03] border border-foreground/10 hover:border-orange-500/50 transition-all group"
+            >
+              <span className="text-[10px] uppercase tracking-widest text-orange-500 font-bold mb-2">LinkedIn</span>
+              <span className="text-lg font-bold text-foreground group-hover:text-orange-500 transition-colors">Pyae Phyo Aung</span>
+            </a>
           </div>
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground/[0.03] border border-foreground/10 text-foreground/80 text-sm font-medium">
             <span className="relative flex h-2 w-2">
