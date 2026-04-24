@@ -21,13 +21,12 @@
   z-index: 0;
   top: 0;
   left: 0;
-  /* Reduced to 0.4s and changed curve to 'out-expo' for faster feel */
+  /* Snappy 0.4s flow */
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform;
   pointer-events: none;
   background-color: rgba(234, 88, 12, 0.15); 
   border: 1px solid rgba(234, 88, 12, 0.3);
-  /* Force hardware acceleration to stop the jitter/jump */
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
@@ -37,23 +36,38 @@
   border: 1px solid rgba(234, 88, 12, 0.4);
 }
 
-/* --- THE LIQUID GLASS EFFECT (UPDATED FOR DARKER LOOK) --- */
+/* --- THE LIQUID GLASS EFFECT (CHARCOAL LOOK) --- */
 .backdrop-blur-2xl {
   -webkit-backdrop-filter: blur(25px) saturate(210%) !important;
   backdrop-filter: blur(25px) saturate(210%) !important;
-  /* Darker Charcoal Grey for Light Mode */
+  /* This gives you that deep charcoal grey instead of white-grey */
   background-color: rgba(23, 23, 23, 0.8) !important; 
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
 .dark .backdrop-blur-2xl {
-  /* Pure Onyx for Dark Mode */
   background-color: rgba(10, 10, 10, 0.7) !important; 
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
+/* --- STABILITY & TRANSITIONS --- */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-/* Ensure nothing else tries to animate layout/size which causes jumping */
-body, div, nav, button, span {
-  transition: background-color 0.3s ease, color 0.15s ease !important;
+/* Added border-color to the transition list for the new circular toggle button */
+div, nav, button, span {
+  transition: background-color 0.3s ease, color 0.15s ease, border-color 0.3s ease !important;
+}
+
+/* Circular Toggle Polish */
+button.rounded-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; 
+  /* Ensures the icon stays centered during rotation */
+  overflow: hidden; 
 }

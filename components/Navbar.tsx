@@ -57,9 +57,15 @@ export default function Navbar() {
           <span className="text-xl md:text-2xl mt-1 leading-none">🐝...</span>
         </div>
 
-        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-3 my-2 active:scale-90 transition-transform shrink-0">
-          {theme === 'dark' ? <Sun size={18} className="text-orange-400" /> : <Moon size={18} className="text-orange-600" />}
-        </button>
+<button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+  className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 my-2 md:my-4 mx-auto rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 active:scale-90 shrink-0 group"
+>
+  {theme === 'dark' ? (
+    <Sun size={18} className="text-orange-400 group-hover:rotate-45 transition-transform duration-500" />
+  ) : (
+    <Moon size={18} className="text-orange-600 group-hover:-rotate-12 transition-transform duration-500" />
+  )}
+</button>
 
         <div className="flex flex-row md:flex-col gap-1 relative overflow-visible">
           {/* THE PILL */}
