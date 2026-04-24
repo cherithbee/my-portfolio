@@ -200,7 +200,7 @@ export default function Home() {
               className="flex flex-col items-start p-6 rounded-3xl bg-foreground/[0.03] border border-foreground/10 hover:border-orange-500/50 transition-all group"
             >
               <span className="text-[10px] uppercase tracking-widest text-orange-500 font-bold mb-2">LinkedIn</span>
-              <span className="text-lg font-bold text-foreground group-hover:text-orange-500 transition-colors">Pyae Phyo Aung</span>
+              <span className="text-lg font-bold text-foreground group-hover:text-orange-500 transition-colors">PYAE PHYO AUNG</span>
             </a>
           </div>
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground/[0.03] border border-foreground/10 text-foreground/80 text-sm font-medium">
