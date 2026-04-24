@@ -1,83 +1,59 @@
 @import "tailwindcss";
 
-/* This is the magic line for Tailwind v4 */
 @theme {
   --variant-dark: (&:where(.dark, .dark *));
 }
+
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #171717;
-    --card: #f9f9f9; 
-    --border: #e5e5e5;
-    scroll-behavior: smooth !important;
+    --foreground: #111111;
   }
-
   .dark {
     --background: #0a0a0a;
     --foreground: #ffffff;
-    --card: #141414; 
-    --border: #262626;
   }
 }
 
-/* 1. Performance and Smoothness */
-html {
-  scroll-behavior: smooth !important;
-  height: -webkit-fill-available;
-  /* Fixes rubber-banding on mobile */
-  overflow-x: hidden;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.5s ease, color 0.5s ease;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  /* Prevents horizontal layout shifts */
-  overflow-x: hidden;
-}
-
-/* 2. Section Anchors */
-section {
-  /* This ensures that when you click a link, the heading isn't covered by the nav */
-  scroll-margin-top: 100px;
-}
-
-/* 3. The Navbar Logic */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* 4. Animation Optimization (THE FIX FOR THE JUMPING) */
-.will-change-transform {
+/* --- THE LIQUID PILL ENGINE --- */
+.liquid-pill {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  /* Reduced to 0.4s and changed curve to 'out-expo' for faster feel */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform;
-  /* Forces the browser to use the GPU for the orange pill */
-  transform: translateZ(0);
+  pointer-events: none;
+  background-color: rgba(234, 88, 12, 0.15); 
+  border: 1px solid rgba(234, 88, 12, 0.3);
+  /* Force hardware acceleration to stop the jitter/jump */
+  transform-style: preserve-3d;
   backface-visibility: hidden;
-  perspective: 1000px;
 }
 
-/* 5. iOS Glassmorphism Enhancement */
+.dark .liquid-pill {
+  background-color: rgba(234, 88, 12, 0.25);
+  border: 1px solid rgba(234, 88, 12, 0.4);
+}
+
+/* --- THE LIQUID GLASS EFFECT (UPDATED FOR DARKER LOOK) --- */
 .backdrop-blur-2xl {
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(210%) !important;
+  backdrop-filter: blur(25px) saturate(210%) !important;
+  /* Darker Charcoal Grey for Light Mode */
+  background-color: rgba(23, 23, 23, 0.8) !important; 
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Optional: Add a subtle shine to the glass */
 .dark .backdrop-blur-2xl {
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Pure Onyx for Dark Mode */
+  background-color: rgba(10, 10, 10, 0.7) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Prevents text from flickering during the theme transition */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+/* Ensure nothing else tries to animate layout/size which causes jumping */
+body, div, nav, button, span {
+  transition: background-color 0.3s ease, color 0.15s ease !important;
 }
