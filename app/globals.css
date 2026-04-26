@@ -29,7 +29,7 @@
   border: 1px solid rgba(234, 88, 12, 0.3);
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  /* Added from the swipe fix: ensures the pill doesn't squash when scrolling */
+  /* PREVENTS SQUISHING: Crucial for the swipe to work correctly */
   flex-shrink: 0;
 }
 
@@ -42,9 +42,11 @@
 .backdrop-blur-2xl {
   -webkit-backdrop-filter: blur(25px) saturate(210%) !important;
   backdrop-filter: blur(25px) saturate(210%) !important;
-  /* Deep charcoal look for Light Mode */
+  /* Deep charcoal for Light Mode */
   background-color: rgba(23, 23, 23, 0.8) !important; 
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  /* FORCES SWIPING: Prevents the glass bar from growing too wide */
+  max-width: 100%;
 }
 
 .dark .backdrop-blur-2xl {
@@ -72,11 +74,16 @@ button.rounded-full {
   overflow: hidden; 
 }
 
-/* --- SCROLLBAR UTILITIES --- */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+/* --- MOBILE SWIPE UTILITIES --- */
 .no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  /* Enable smooth thumb swiping on mobile */
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
