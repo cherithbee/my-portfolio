@@ -67,38 +67,38 @@ export default function Navbar() {
   )}
 </button>
 
-        <div className="flex flex-row md:flex-col gap-1 relative overflow-visible">
-          {/* THE PILL */}
-          <div 
-            className="liquid-pill rounded-3xl"
-            style={{ 
-              width: isMobile ? '100px' : '140px', 
-              height: isMobile ? '40px' : '52px',
-              transform: transformValue
-            }} 
-          />
+{/* LINK CONTAINER - Now scrollable on mobile */}
+<div className="flex flex-row md:flex-col gap-1 w-full relative overflow-x-auto md:overflow-visible no-scrollbar scroll-smooth h-auto py-1">
+  {/* THE PILL */}
+  <div 
+    className="liquid-pill rounded-3xl"
+    style={{ 
+      width: isMobile ? '100px' : '140px', 
+      height: isMobile ? '40px' : '52px',
+      transform: transformValue
+    }} 
+  />
 
-          {navLinks.map((link) => {
-            const id = link.href.replace('#', '');
-            const isActive = activeSection === id;
-            return (
-              <button
-                key={link.name}
-                onClick={() => {
-                  isManualScrolling.current = true;
-                  setActiveSection(id);
-                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                  setTimeout(() => { isManualScrolling.current = false; }, 600); 
-                }}
-                className={`relative px-4 md:px-6 py-3 md:py-4 text-[11px] h-[40px] md:h-[52px] flex items-center justify-center uppercase tracking-[0.2em] font-black z-10 text-center w-[100px] md:w-[140px] shrink-0 transition-colors duration-300 ${
-                  isActive ? 'text-orange-600' : 'text-white/70 dark:text-white/60 hover:text-orange-600'
-                }`}
-              >
-                {link.name}
-              </button>
-            );
-          })}
-        </div>
+  {navLinks.map((link) => {
+    const id = link.href.replace('#', '');
+    return (
+      <button
+        key={link.name}
+        onClick={() => {
+          isManualScrolling.current = true;
+          setActiveSection(id);
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isManualScrolling.current = false; }, 600); 
+        }}
+        className={`relative px-4 md:px-6 py-3 md:py-4 text-[11px] h-[40px] md:h-[52px] flex items-center justify-center uppercase tracking-[0.2em] font-black z-10 text-center w-[100px] md:w-[140px] shrink-0 transition-colors duration-300 ${
+          activeSection === id ? 'text-orange-600' : 'text-white/70 dark:text-white/60'
+        }`}
+      >
+        {link.name}
+      </button>
+    );
+  })}
+</div>
       </div>
     </nav>
   );
