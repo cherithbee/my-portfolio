@@ -76,20 +76,19 @@ button.rounded-full {
 
 /* --- SCROLLBAR HIDING & SWIPE --- */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
-  /* This enables the 'rubber-band' smooth swipe on mobile */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-wrap: nowrap !important; /* Force all buttons into one long line */
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Forces the swipe track */
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
-/* Ensure the pill and glass container don't interfere with the swipe width */
-.liquid-pill {
-  flex-shrink: 0;
-  pointer-events: none;
+/* Ensure backdrop blur is strong enough for the glass look */
+.backdrop-blur-2xl {
+  -webkit-backdrop-filter: blur(25px) saturate(210%) !important;
+  backdrop-filter: blur(25px) saturate(210%) !important;
 }
