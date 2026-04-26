@@ -47,58 +47,58 @@ export default function Navbar() {
   const transformValue = `translate${isMobile ? 'X' : 'Y'}(${activeIndex * spacing}px)`;
 
   return (
-    <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-[100] flex justify-center">
-      <div className="flex flex-row md:flex-col items-center border border-black/[0.1] dark:border-white/10 shadow-2xl p-2 rounded-[3rem] backdrop-blur-2xl transition-all duration-500 
-        /* FIX: Prevents the bar from expanding beyond the phone screen width */
-        max-w-[92vw] md:max-w-none overflow-hidden">
-        
-        {/* LOGO */}
-        <div className="flex flex-col items-center px-4 md:px-0 md:pt-4 md:pb-2 border-r md:border-r-0 md:border-b border-black/10 dark:border-white/20 mr-2 md:mr-0 shrink-0 h-[60px] md:h-[80px] justify-center">
-          <span className="text-orange-600 font-black text-xl md:text-2xl italic leading-none">CB</span>
-          <span className="text-xl md:text-2xl mt-1 leading-none">🐝...</span>
-        </div>
-
-        {/* THEME TOGGLE */}
-        <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 my-2 md:my-4 mx-auto rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 transition-all duration-300 active:scale-90 shrink-0 group"
-        >
-          {theme === 'dark' ? <Sun size={18} className="text-orange-400" /> : <Moon size={18} className="text-orange-600" />}
-        </button>
-
-        {/* SWIPEABLE LINK CONTAINER */}
-        <div className="flex flex-row md:flex-col gap-1 relative overflow-x-auto md:overflow-visible no-scrollbar scroll-smooth h-auto py-1 flex-nowrap shrink">
-          <div 
-            className="liquid-pill rounded-3xl"
-            style={{ 
-              width: isMobile ? '100px' : '140px', 
-              height: isMobile ? '40px' : '52px',
-              transform: transformValue
-            }} 
-          />
-
-          {navLinks.map((link) => {
-            const id = link.href.replace('#', '');
-            const isActive = activeSection === id;
-            return (
-              <button
-                key={link.name}
-                onClick={() => {
-                  isManualScrolling.current = true;
-                  setActiveSection(id);
-                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                  setTimeout(() => { isManualScrolling.current = false; }, 600); 
-                }}
-                className={`relative px-4 md:px-6 py-3 md:py-4 text-[11px] h-[40px] md:h-[52px] flex items-center justify-center uppercase tracking-[0.2em] font-black z-10 text-center w-[100px] md:w-[140px] shrink-0 transition-colors duration-300 ${
-                  isActive ? 'text-orange-600' : 'text-white/70 dark:text-white/60'
-                }`}
-              >
-                {link.name}
-              </button>
-            );
-          })}
-        </div>
+  <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-full flex justify-center px-4">
+    <div className="flex flex-row md:flex-col items-center border border-black/[0.1] dark:border-white/10 shadow-2xl p-2 rounded-[3rem] backdrop-blur-2xl transition-all duration-500 
+      /* FIX: Prevents the bar from being wider than your phone screen */
+      max-w-full md:max-w-none w-auto overflow-hidden">
+      
+      {/* LOGO */}
+      <div className="flex flex-col items-center px-4 md:px-0 md:pt-4 md:pb-2 border-r md:border-r-0 md:border-b border-black/10 dark:border-white/20 mr-2 md:mr-0 shrink-0 h-[60px] md:h-[80px] justify-center">
+        <span className="text-orange-600 font-black text-xl md:text-2xl italic leading-none">CB</span>
+        <span className="text-xl md:text-2xl mt-1 leading-none">🐝...</span>
       </div>
-    </nav>
-  );
+
+      {/* THEME TOGGLE */}
+      <button
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 my-2 md:my-4 mx-auto rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 transition-all duration-300 active:scale-90 shrink-0"
+      >
+        {theme === 'dark' ? <Sun size={18} className="text-orange-400" /> : <Moon size={18} className="text-orange-600" />}
+      </button>
+
+      {/* SWIPEABLE LINK CONTAINER - Added flex-nowrap and overflow-x-auto */}
+      <div className="flex flex-row md:flex-col gap-1 relative overflow-x-auto md:overflow-visible no-scrollbar scroll-smooth h-auto py-1 flex-nowrap items-center">
+        <div 
+          className="liquid-pill rounded-3xl shrink-0"
+          style={{ 
+            width: isMobile ? '100px' : '140px', 
+            height: isMobile ? '40px' : '52px',
+            transform: transformValue
+          }} 
+        />
+
+        {navLinks.map((link) => {
+          const id = link.href.replace('#', '');
+          const isActive = activeSection === id;
+          return (
+            <button
+              key={link.name}
+              onClick={() => {
+                isManualScrolling.current = true;
+                setActiveSection(id);
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => { isManualScrolling.current = false; }, 600); 
+              }}
+              className={`relative px-4 md:px-6 py-3 md:py-4 text-[11px] h-[40px] md:h-[52px] flex items-center justify-center uppercase tracking-[0.2em] font-black z-10 text-center w-[100px] md:w-[140px] shrink-0 transition-colors duration-300 ${
+                isActive ? 'text-orange-600' : 'text-white/70 dark:text-white/60'
+              }`}
+            >
+              {link.name}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  </nav>
+);
 }

@@ -74,16 +74,22 @@ button.rounded-full {
   overflow: hidden; 
 }
 
-/* --- MOBILE SWIPE UTILITIES --- */
+/* --- SCROLLBAR HIDING & SWIPE --- */
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
-  /* Enable smooth thumb swiping on mobile */
+  /* This enables the 'rubber-band' smooth swipe on mobile */
   -webkit-overflow-scrolling: touch;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important; /* Force all buttons into one long line */
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+/* Ensure the pill and glass container don't interfere with the swipe width */
+.liquid-pill {
+  flex-shrink: 0;
+  pointer-events: none;
 }
