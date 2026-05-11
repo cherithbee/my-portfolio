@@ -73,8 +73,8 @@ export default function Navbar() {
         <div 
           className="liquid-pill rounded-3xl shrink-0"
           style={{ 
-            width: isMobile ? '100px' : '140px', 
-            height: isMobile ? '40px' : '52px',
+            width: isMobile ? '100px' : '155px', 
+            height: isMobile ? '40px' : '60px',
             transform: transformValue
           }} 
         />
