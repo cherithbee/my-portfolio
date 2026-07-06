@@ -2,29 +2,34 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 import ScrollReveal from '@/components/ScrollReveal';
+import BackgroundCanvas from '@/components/BackgroundCanvas';
+import BentoSkills from '@/components/BentoSkills';
 
 const PROJECTS_DATA = [
   {
     title: "Trash Sort AI: Eco Incentive Campus System",
-    year: "2026", 
+    year: "2026",
     description: "Engineered a YOLOv11 auditing terminal for real-time waste classification, achieving 80% mAP through high-reliability dataset construction.",
     tags: ["YOLOv11", "AI Integration", "Roboflow", "Python"],
     link: "https://rsuip.org/rsuicthackathon/",
-    image: "https://placehold.co/600x400/222/white?text=Trash+Sort+AI" 
+    image: "https://placehold.co/600x400/1a1a1a/ea580c?text=Trash+Sort+AI",
+    github: "https://github.com/cherithbee/trash-sort-ai",
   },
   {
     title: "RSU CIMSO Hospitality ERP Hackathon",
-    year: "2025", 
+    year: "2025",
     description: "Developed an innovative ERP solution for the hospitality industry in 2025, transforming complex datasets into user-friendly dashboards.",
     tags: ["React.js", "Data Visualization", "ERP", "AI Integration"],
-    link: "https://rsuip.org/rsu-gears-up-for-the-hospitality-erp-hackathon-2025-with-a-prize-pool-of-100000-thb/#:~:text=100%2C000%20THB%20%F0%9F%92%B0-,%F0%9F%8E%89%20RSU%20Gears%20Up%20for%20the%20%E2%80%9CHospitality%20ERP%20Hackathon%202025,Pool%20of%20100%2C000%20THB%20%F0%9F%92%B0&text=Rangsit%20University%2C%20through%20the%20Rangsit,systems%20for%20the%20hospitality%20industry.&text=A%20total%20prize%20pool%20of,innovations%20on%20an%20international%20stage!https://rsuip.org/rsu-gears-up-for-the-hospitality-erp-hackathon-2025-with-a-prize-pool-of-100000-thb/#:~:text=100%2C000%20THB%20%F0%9F%92%B0-,%F0%9F%8E%89%20RSU%20Gears%20Up%20for%20the%20%E2%80%9CHospitality%20ERP%20Hackathon%202025,Pool%20of%20100%2C000%20THB%20%F0%9F%92%B0&text=Rangsit%20University%2C%20through%20the%20Rangsit,systems%20for%20the%20hospitality%20industry.&text=A%20total%20prize%20pool%20of,innovations%20on%20an%20international%20stage!",
-    image: "https://placehold.co/600x400/222/white?text=ERP+Dashboard"
+    link: "https://rsuip.org/rsu-gears-up-for-the-hospitality-erp-hackathon-2025-with-a-prize-pool-of-100000-thb/",
+    image: "https://placehold.co/600x400/1a1a1a/ea580c?text=CiMSO+ERP",
+    github: "https://github.com/cherithbee/cimso-erp-hackathon",
   }
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground transition-colors duration-500 selection:bg-orange-500/30">
+    <main className="min-h-screen text-foreground selection:bg-orange-500/30">
+      <BackgroundCanvas />
       <Navbar />
 
       {/* 1. Hero / Home Section */}
@@ -65,7 +70,7 @@ export default function Home() {
               <span className="text-orange-500 font-medium italic">08/2023 — Present</span>
             </div>
             <p className="text-foreground/80 font-medium italic">Bachelor of Science in Information and Communication Technology</p>
-            <p className="text-orange-600 dark:text-orange-500 font-bold mt-1 tracking-wider">GPA: 3.72 / 4.00</p>
+            <p className="text-orange-600 dark:text-orange-500 font-bold mt-1 tracking-wider">GPA: 3.75 / 4.00</p>
             <p className="text-foreground/60 mt-3 text-sm leading-relaxed max-w-2xl">
               Relevant Coursework: Database Management Systems, Web Development, Systems Analysis and Design.
             </p>
@@ -149,8 +154,11 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* 5. Projects Section */}
-      <section id="projects" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20">
+      {/* 5. Skills Section */}
+      <BentoSkills />
+
+      {/* 6. Projects Section */}
+      <section id="projects" className="max-w-6xl mx-auto px-6 md:pl-48 py-24 border-t border-foreground/10 scroll-mt-20" style={{ zIndex: 1, position: 'relative' }}>
         <ScrollReveal>
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-4xl font-bold tracking-tighter italic text-foreground">Featured Work</h2>
@@ -164,7 +172,7 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* 6. Contact Section */}
+      {/* 7. Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-6 md:pl-48 py-32 border-t border-foreground/10 scroll-mt-20">
         <ScrollReveal>
         <div className="flex flex-col items-center text-center space-y-12">

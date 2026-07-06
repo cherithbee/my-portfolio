@@ -28,7 +28,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-foreground opacity-70 text-lg md:text-xl font-medium mt-4 tracking-tight">
-          ICT Student @ Rangsit University | <span className="font-bold">GPA: 3.72</span>
+          ICT Student @ Rangsit University | <span className="font-bold">GPA: 3.75</span>
         </p>
       </div>
 
